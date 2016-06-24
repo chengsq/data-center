@@ -120,7 +120,9 @@ mail.settings.ssl = myconf.get('smtp.ssl') or False
 # Consult manual for more options, validators, etc.
 
 db = DAL('mysql://root:123456@localhost/test',migrate=False)
-db.define_table('mytable', Field('content'),format='%(content)s')
+#db.define_table('mytable', Field('content'),format='%(content)s')
+db.define_table('mytable', Field('temperature','double'),Field('pressure','double'),Field('dates','date'),\
+ Field('time','time'),format='%(content)s',migrate=False)
 # More API examples for controllers:
 #
 # >>> db.mytable.insert(myfield='value')
