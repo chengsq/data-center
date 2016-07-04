@@ -5,12 +5,25 @@ function myrefresh()
 {
        window.location.reload();
 }
-setTimeout('myrefresh()',1000); //指定1秒刷新一次
+setTimeout('myrefresh()',5000); //指定1秒刷新一次
 </script>
+
+<style type="text/css">
+body {background-color: white }
+h1 { text-align:center; }
+h3 { text-align:right; }
+p {margin-left: 20px}
+#record-main {background-color:white}
+</style>
+
 <body>
-<h1>{{=message}}</h1>
-<h2>Number of visits: {{=counter}}</h2>
+<h1 id = "head-1">{{=message}}</h1>
+<h3>Number of visits: {{=counter}}</h3>
+<div id = "record-main">
 <h2>Records</h2>
+<div id = "record-table">
 {{=SQLTABLE(rows)}}
+</div>
+</div>
 </body>
 </html>

@@ -20,7 +20,7 @@ def index():
     #db = DAL('sqlite://data.sqlite',migrate=False)
     session.counter = (session.counter or 0) + 1
     tmp = db().select(db.mytable.ALL,orderby = ~db.mytable.id,limitby = (2,6))
-    return dict(message="Hello from MyApp", counter=session.counter, rows = tmp,row1= "11")
+    return dict(message="Data Report", counter=session.counter, rows = tmp,row1= "11")
     #response.flash = T("Hello shiqing")
 
 
